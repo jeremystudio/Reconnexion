@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECONNEXION. 3 jours pour te reconnecter à qui tu es vraiment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #F7B042;
+            --gold-light: #f9c76b;
+            --dark: #1a1a1a;
+            --darker: #0d0d0d;
+            --light: #f9f9f9;
+            --white: #ffffff;
+            --green: #42cd66;
+            --green-hover: #38b559;
+            --text: #333333;
+            --text-light: #666666;
+            --section-padding: 100px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.8;
+            font-size: 17px;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .container--narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* =================== HERO =================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('images/hero-bastide-facade.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 60px 30px;
+            position: relative;
+        }
+
+        .hero__label {
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .hero__title {
+            font-size: clamp(50px, 8vw, 90px);
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .hero__divider {
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto 35px;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(18px, 2.5vw, 22px);
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .hero__cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .hero__cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 176, 66, 0.3);
+        }
+
+        /* =================== SECTION INTRO =================== */
+        .intro {
+            padding: 120px 0;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .intro__text {
+            font-size: 20px;
+            line-height: 1.9;
+            color: var(--text);
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .intro__text em {
+            color: var(--gold);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* =================== PAINPOINTS =================== */
+        .painpoints {
+            padding: var(--section-padding);
+            background: var(--darker);
+            color: var(--white);
+        }
+
+        .painpoints__label {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .painpoints__title {
+            text-align: center;
+            font-size: clamp(32px, 5vw, 46px);
+            margin-bottom: 60px;
+        }
+
+        .painpoints__list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .painpoints__item {
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 18px;
+            font-weight: 300;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .painpoints__item::before {
+            content: '';
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .painpoints__conclusion {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 22px;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* =================== EXPERIENCE =================== */
+        .experience {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: var(--gold);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(32px, 5vw, 46px);
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 300;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 70px;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 50px 30px;
+            background: var(--light);
+            transition: transform 0.3s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar__icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 25px;
+        }
+
+        .pillar__icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .pillar__title {
+            font-size: 24px;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .pillar__text {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .experience__bottom {
+            margin-top: 80px;
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--darker);
+            color: var(--white);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience__bottom p {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .experience__bottom strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* =================== TRANSFORMATIONS =================== */
+        .transformations {
+            padding: 120px 0;
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        .transformations__list {
+            max-width: 700px;
+            margin: 60px auto 0;
+            list-style: none;
+        }
+
+        .transformations__item {
+            padding: 28px 0 28px 35px;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.7;
+            font-weight: 300;
+            color: var(--text);
+        }
+
+        .transformations__item:first-child {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .transformations__item::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            top: 28px;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        /* =================== APPROCHE =================== */
+        .approche {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .approche__content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .approche__intro {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--dark);
+            margin-bottom: 40px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
+
+        .approche__list {
+            list-style: none;
+            text-align: left;
+            margin: 40px 0;
+        }
+
+        .approche__list li {
+            padding: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 17px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .approche__list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .approche__result {
+            margin-top: 50px;
+            font-size: 19px;
+            line-height: 1.9;
+            color: var(--text);
+        }
+
+        .approche__result strong {
+            color: var(--dark);
+        }
+
+        /* =================== INTERVENANTS =================== */
+        .intervenants {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .intervenant {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-bottom: 100px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .intervenant:last-child {
+            margin-bottom: 0;
+        }
+
+        .intervenant--reverse {
+            grid-template-columns: 1fr 350px;
+        }
+
+        .intervenant__photo {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .intervenant__photo-placeholder {
+            width: 100%;
+            height: 450px;
+            background: var(--darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        .intervenant__name {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .intervenant__role {
+            color: var(--gold);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .intervenant__text {
+            font-size: 16px;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        .intervenant__text p {
+            margin-bottom: 18px;
+        }
+
+        .intervenant__highlight {
+            margin-top: 25px;
+            padding: 20px 25px;
+            background: var(--white);
+            border-left: 3px solid var(--gold);
+            font-style: italic;
+            color: var(--dark);
+        }
+
+        /* =================== FORMAT =================== */
+        .format {
+            padding: 120px 0;
+            background: var(--darker);
+            color: var(--white);
+        }
+
+        .format__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .format__item {
+            padding: 35px 30px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .format__item:hover {
+            border-color: var(--gold);
+        }
+
+        .format__item-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .format__item-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* =================== PRATIQUES DETAIL =================== */
+        .pratiques {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .pratiques__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pratique-card {
+            padding: 40px 30px;
+            background: var(--light);
+            border-top: 3px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .pratique-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pratique-card__title {
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .pratique-card__text {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* =================== LIEU =================== */
+        .lieu {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .lieu__gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .lieu__photo-placeholder {
+            height: 280px;
+            background: var(--darker);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .lieu__photo-placeholder:first-child {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+            height: 100%;
+        }
+
+        /* =================== POUR TOI =================== */
+        .pour-toi {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .pour-toi__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .pour-toi__list {
+            list-style: none;
+        }
+
+        .pour-toi__item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 17px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .pour-toi__check {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .pour-toi__check svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--dark);
+            fill: none;
+            stroke-width: 3;
+        }
+
+        .pour-toi__important {
+            padding: 50px 40px;
+            background: var(--darker);
+            color: var(--white);
+        }
+
+        .pour-toi__important-title {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .pour-toi__important p {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .pour-toi__important p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =================== TARIFS =================== */
+        .tarifs {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .tarifs__steps {
+            max-width: 820px;
+            margin: 70px auto 0;
+        }
+
+        .tarif-step {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #ddd;
+            align-items: start;
+        }
+
+        .tarif-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .tarif-step__number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.35;
+            line-height: 1;
+            padding-top: 4px;
+        }
+
+        .tarif-step__title {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .tarif-step__desc {
+            font-size: 15px;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .tarif-step__price-main {
+            font-size: clamp(52px, 7vw, 72px);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .tarif-step__price-label {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 8px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .tarif-step__badge {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--white);
+            background: var(--dark);
+            padding: 5px 14px;
+            font-weight: 500;
+        }
+
+        .tarifs__options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .tarif-option {
+            text-align: center;
+            padding: 35px 20px;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .tarif-option:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .tarif-option__price {
+            font-size: 34px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .tarif-option__label {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .tarifs__note {
+            margin-top: 40px;
+            font-size: 14px;
+            color: var(--text-light);
+            padding-left: 110px;
+        }
+
+        .tarifs__note p {
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .tarif-step {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .tarif-step__number {
+                font-size: 48px;
+                opacity: 0.25;
+            }
+
+            .tarifs__options {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+            }
+
+            .tarifs__note {
+                padding-left: 0;
+                text-align: center;
+            }
+        }
+
+        /* =================== CTA FINAL =================== */
+        .cta-final {
+            padding: 120px 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('images/lieu-jardin-roses.jpg') center/cover no-repeat fixed;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-final__title {
+            font-size: clamp(32px, 5vw, 50px);
+            margin-bottom: 25px;
+        }
+
+        .cta-final__text {
+            font-size: 20px;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+        }
+
+        .cta-final__btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            padding: 20px 60px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .cta-final__btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(247, 176, 66, 0.3);
+        }
+
+        /* =================== INSCRIPTION =================== */
+        .inscription {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .inscription__form {
+            max-width: 600px;
+            margin: 60px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #ddd;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background: var(--light);
+            color: var(--dark);
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form__submit {
+            display: block;
+            width: 100%;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            padding: 18px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form__submit:hover {
+            background: var(--gold-light);
+        }
+
+        /* =================== CONTACT =================== */
+        .contact {
+            padding: 80px 0;
+            background: var(--darker);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact__title {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact__text {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .contact__links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .contact__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact__link:hover {
+            opacity: 0.8;
+        }
+
+        .contact__link svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--gold);
+        }
+
+        /* =================== FOOTER =================== */
+        footer {
+            padding: 30px 0;
+            background: #000;
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* =================== DEROULEMENT =================== */
+        .deroulement {
+            padding: 120px 0;
+            background: var(--light);
+        }
+
+        .deroulement__days {
+            max-width: 820px;
+            margin: 70px auto 0;
+        }
+
+        .deroulement__day {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 50px;
+            margin-bottom: 70px;
+            padding-bottom: 70px;
+            border-bottom: 1px solid #e0e0e0;
+            align-items: start;
+        }
+
+        .deroulement__day:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .deroulement__day-meta {
+            text-align: right;
+            padding-top: 6px;
+        }
+
+        .deroulement__day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+        }
+
+        .deroulement__day-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-light);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .deroulement__day-title {
+            font-size: 30px;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .deroulement__day-content {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text);
+            line-height: 1.9;
+        }
+
+        .deroulement__day-content p {
+            margin-bottom: 16px;
+        }
+
+        .deroulement__day-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =================== MIREILLE (HOTE) =================== */
+        .lieu__hote {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+            align-items: center;
+            background: var(--white);
+            padding: 50px;
+        }
+
+        .lieu__hote-photo {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .lieu__hote-tag {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .lieu__hote-name {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .lieu__hote-role {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .lieu__hote-text {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .lieu__hote-text p {
+            margin-bottom: 15px;
+        }
+
+        .lieu__hote-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Repas highlight */
+        .repas-highlight {
+            margin-top: 50px;
+            padding: 40px;
+            background: var(--darker);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .repas-highlight__icon {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .repas-highlight__title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .repas-highlight__text {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 980px) {
+            .deroulement__day {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .deroulement__day-meta {
+                text-align: left;
+                display: flex;
+                align-items: baseline;
+                gap: 15px;
+            }
+
+            .deroulement__day-number {
+                font-size: 36px;
+            }
+
+            .lieu__hote {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .lieu__hote-photo {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .deroulement {
+                padding: 60px 0;
+            }
+
+            .deroulement__day {
+                margin-bottom: 50px;
+                padding-bottom: 50px;
+            }
+
+            .deroulement__day-title {
+                font-size: 24px;
+            }
+
+            .deroulement__day-content {
+                font-size: 15px;
+            }
+
+            .lieu__hote {
+                padding: 30px 20px;
+            }
+
+            .repas-highlight {
+                padding: 30px 20px;
+            }
+        }
+
+        /* =================== ANIMATIONS =================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =================== RESPONSIVE =================== */
+        @media (max-width: 980px) {
+            .pillars {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .transformations__list {
+                margin-top: 40px;
+            }
+
+            .intervenant {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .intervenant--reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .intervenant__photo,
+            .intervenant__photo-placeholder {
+                height: 350px;
+            }
+
+            .format__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pratiques__grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 60px auto 0;
+            }
+
+            .lieu__gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .lieu__photo-placeholder:first-child {
+                grid-column: auto;
+                grid-row: auto;
+                height: 280px;
+            }
+
+            .pour-toi__grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+            :root {
+                --section-padding: 60px 0;
+            }
+
+            body {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .container,
+            .container--narrow {
+                padding: 0 20px;
+            }
+
+            /* HERO mobile */
+            .hero {
+                min-height: 100vh;
+                min-height: 100svh;
+                padding: 40px 20px;
+                background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                            url('images/hero-bastide-facade.jpg') center/cover no-repeat;
+            }
+
+            .hero__label {
+                font-size: 12px;
+                letter-spacing: 4px;
+                margin-bottom: 20px;
+            }
+
+            .hero__title {
+                font-size: 42px;
+                letter-spacing: 2px;
+            }
+
+            .hero__subtitle {
+                font-size: 16px;
+                margin-bottom: 35px;
+                padding: 0 10px;
+            }
+
+            .hero__cta {
+                padding: 16px 35px;
+                font-size: 13px;
+            }
+
+            /* INTRO mobile */
+            .intro {
+                padding: 60px 0;
+            }
+
+            .intro__text {
+                font-size: 17px;
+                line-height: 1.8;
+            }
+
+            /* SECTIONS mobile */
+            .experience,
+            .transformations,
+            .approche,
+            .intervenants,
+            .format,
+            .pratiques,
+            .lieu,
+            .pour-toi,
+            .tarifs,
+            .cta-final,
+            .inscription {
+                padding: 60px 0;
+            }
+
+            .section-label {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .section-subtitle {
+                font-size: 15px;
+                margin-bottom: 40px;
+            }
+
+            /* PAINPOINTS mobile */
+            .painpoints__title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .painpoints__item {
+                font-size: 15px;
+                padding: 18px 0;
+            }
+
+            .painpoints__conclusion {
+                font-size: 18px;
+                margin-top: 40px;
+            }
+
+            /* PILLARS mobile */
+            .pillar {
+                padding: 35px 25px;
+            }
+
+            .pillar__title {
+                font-size: 20px;
+            }
+
+            /* EXPERIENCE BOTTOM mobile */
+            .experience__bottom {
+                padding: 35px 20px;
+                margin-top: 50px;
+            }
+
+            .experience__bottom p {
+                font-size: 16px;
+            }
+
+            /* TRANSFORMATIONS mobile */
+            .transformations__item {
+                font-size: 15px;
+                padding: 22px 0 22px 30px;
+            }
+
+            .transformations__item::before {
+                top: 22px;
+            }
+
+            /* APPROCHE mobile */
+            .approche__intro {
+                font-size: 18px;
+            }
+
+            .approche__result {
+                font-size: 16px;
+            }
+
+            /* INTERVENANTS mobile */
+            .intervenant {
+                gap: 25px;
+                margin-bottom: 70px;
+            }
+
+            .intervenant__photo {
+                height: 350px;
+            }
+
+            .intervenant__name {
+                font-size: 26px;
+            }
+
+            .intervenant__role {
+                font-size: 12px;
+            }
+
+            .intervenant__text {
+                font-size: 15px;
+            }
+
+            .intervenant__highlight {
+                padding: 15px 20px;
+                font-size: 14px;
+            }
+
+            /* FORMAT mobile */
+            .format__item {
+                padding: 25px 20px;
+            }
+
+            .format__item-title {
+                font-size: 18px;
+            }
+
+            /* PRATIQUES mobile */
+            .pratique-card {
+                padding: 30px 20px;
+            }
+
+            .pratique-card__title {
+                font-size: 19px;
+            }
+
+            /* LIEU mobile */
+            .lieu__gallery {
+                gap: 10px;
+            }
+
+            .lieu__gallery img {
+                height: 220px !important;
+            }
+
+            .lieu__gallery img:first-child {
+                height: 250px !important;
+            }
+
+            /* POUR TOI mobile */
+            .pour-toi__item {
+                font-size: 15px;
+                padding: 15px 0;
+            }
+
+            .pour-toi__important {
+                padding: 35px 25px;
+            }
+
+            .pour-toi__important-title {
+                font-size: 22px;
+            }
+
+            .pour-toi__important p {
+                font-size: 15px;
+            }
+
+            /* TARIFS mobile */
+            .tarifs__price {
+                font-size: 55px;
+            }
+
+            .tarif-option {
+                padding: 30px 20px;
+            }
+
+            .tarif-option__price {
+                font-size: 30px;
+            }
+
+            /* CTA FINAL mobile */
+            .cta-final__title {
+                font-size: 28px;
+            }
+
+            .cta-final__text {
+                font-size: 16px;
+                margin-bottom: 35px;
+            }
+
+            .cta-final__btn {
+                padding: 16px 40px;
+                font-size: 14px;
+            }
+
+            /* FORM mobile */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 14px 16px;
+                font-size: 16px;
+            }
+
+            .form__submit {
+                padding: 16px;
+                font-size: 14px;
+            }
+
+            /* CONTACT mobile */
+            .contact {
+                padding: 60px 0;
+            }
+
+            .contact__title {
+                font-size: 22px;
+            }
+
+            .contact__links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <div class="hero__label">Du 23 au 25 mai · Ardèche méridionale</div>
+            <h1 class="hero__title">Reconnexion</h1>
+            <div class="hero__divider"></div>
+            <p class="hero__subtitle">3 jours authentiques et immersifs pour sortir du mental, relâcher la pression du quotidien et te reconnecter à qui tu es vraiment.</p>
+            <a href="#inscription" class="hero__cta">Je réserve ma place</a>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro reveal">
+        <div class="container--narrow">
+            <p class="intro__text">
+                L'expérience Reconnexion est un moment qui a été imaginé pour que tu <em>reviennes à toi</em>, pour que tu te reconnectes à ce qui est le plus important dans ta vie et pour que tu retrouves <em>du sens et de la sérénité</em> dans ton quotidien.
+            </p>
+        </div>
+    </section>
+
+    <!-- PAINPOINTS -->
+    <section class="painpoints reveal">
+        <div class="container--narrow">
+            <div class="painpoints__label">Peut-être que tu te reconnais</div>
+            <h2 class="painpoints__title">Là-dedans</h2>
+            <ul class="painpoints__list">
+                <li class="painpoints__item">Tu te sens fatigué, tendu, et toujours un peu "dans ta tête"</li>
+                <li class="painpoints__item">Tu tournes parfois en rond sur les mêmes peurs ou blocages</li>
+                <li class="painpoints__item">Tu as du mal à lâcher prise, à ralentir et prendre du temps pour toi</li>
+                <li class="painpoints__item">Tu sens qu'il y a "autre chose" qui pourrait t'aider, mais tu n'arrives pas à y accéder seul</li>
+            </ul>
+            <p class="painpoints__conclusion">Ces 3 jours ont été imaginés spécialement pour toi.</p>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience reveal">
+        <div class="container">
+            <div class="section-label">Ce que tu vas vivre</div>
+            <h2 class="section-title">3 jours de transformation</h2>
+            <p class="section-subtitle">On va travailler à la fois sur l'esprit et le corps pour créer de profonds déclics.</p>
+
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar__icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="18" r="10"/>
+                            <path d="M30 32c-12 0-20 8-20 18h40c0-10-8-18-20-18z"/>
+                            <path d="M22 16l4 4 8-8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="pillar__title">Coaching émotionnel</h3>
+                    <p class="pillar__text">Mettre en lumière ce qui te bloque vraiment, pour arrêter de reproduire les mêmes schémas continuellement.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar__icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30 8c-8 0-15 5-15 12 0 10 15 32 15 32s15-22 15-32c0-7-7-12-15-12z"/>
+                            <circle cx="30" cy="20" r="5"/>
+                        </svg>
+                    </div>
+                    <h3 class="pillar__title">Yoga du souffle</h3>
+                    <p class="pillar__text">Sortir du mental et revenir dans ton corps grâce à une pratique du yoga ancestral qui allie le souffle et le retour à soi.</p>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar__icon">
+                        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 25c0-8 7-15 15-15s15 7 15 15"/>
+                            <path d="M12 30h36"/>
+                            <path d="M18 35c0 6 5 12 12 15 7-3 12-9 12-15"/>
+                            <path d="M30 30v20"/>
+                        </svg>
+                    </div>
+                    <h3 class="pillar__title">Massage ancestral</h3>
+                    <p class="pillar__text">Relâcher profondément les tensions physiques et émotionnelles pour t'en libérer et ancrer ce que ton esprit aura mis en conscience.</p>
+                </div>
+            </div>
+
+            <div class="experience__bottom">
+                <p>L'objectif de ce séjour ne s'arrête pas à comprendre des concepts.<br><strong>Il a été structuré pour t'aider à ressentir, intégrer et te transformer en profondeur.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATIONS -->
+    <section class="transformations reveal">
+        <div class="container">
+            <div class="section-label">Les résultats</div>
+            <h2 class="section-title">Ce que ça peut changer pour toi</h2>
+
+            <ul class="transformations__list">
+                <li class="transformations__item">Te sentir enfin apaisé, même quand le hamster dans ta tête court dans sa roue.</li>
+                <li class="transformations__item">Arrêter de douter en permanence de toi, de tes capacités ou de ta valeur.</li>
+                <li class="transformations__item">Te sentir aligné dans tes décisions, sans avoir peur de l'impact sur ton entourage.</li>
+                <li class="transformations__item">Sortir de schémas qui te limitent depuis des années (confiance, relation à l'argent, problèmes relationnels, sentiment de ne pas être compris).</li>
+                <li class="transformations__item">Retrouver de la clarté et du sens dans tous tes domaines de vie.</li>
+                <li class="transformations__item">Te reconnecter à ton énergie, ton corps, à ton rythme durablement.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- APPROCHE -->
+    <section class="approche reveal">
+        <div class="container">
+            <div class="approche__content">
+                <div class="section-label">Notre approche</div>
+                <h2 class="section-title">Honnête et directe</h2>
+                <p class="approche__intro">Nous ne sommes pas là pour te sauver. Soyons clair, ce n'est pas notre rôle et notre place.</p>
+                <p style="font-size: 17px; color: var(--text-light); margin-bottom: 10px;">Par contre, nous serons présents pour t'aider à :</p>
+                <ul class="approche__list">
+                    <li>Comprendre ce qui se joue au fond de toi</li>
+                    <li>Réintégrer ce que tu rejettes ou ce que tu juges</li>
+                    <li>Retrouver ton équilibre émotionnel global à travers le corps et l'esprit</li>
+                </ul>
+                <p class="approche__result">
+                    Nous souhaitons que tu repartes avec <strong>une lecture beaucoup plus juste de toi-même</strong>. Avec la capacité de voir ce qui se passe en temps réel grâce à des outils concrets de coaching. Afin de <strong>ne plus être dirigé par des schémas inconscients</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERVENANTS -->
+    <section class="intervenants reveal">
+        <div class="container">
+            <div class="section-label">Les intervenants</div>
+            <h2 class="section-title" style="margin-bottom: 80px;">Qui t'accompagne</h2>
+
+            <!-- Jérémy -->
+            <div class="intervenant">
+                <img src="images/portrait-jeremy.jpg" alt="Jérémy Guillaume — Coach émotionnel" class="intervenant__photo">
+                <div>
+                    <h3 class="intervenant__name">Jérémy</h3>
+                    <div class="intervenant__role">Coaching émotionnel</div>
+                    <div class="intervenant__text">
+                        <p>Mon approche part d'un principe simple : nous n'avons rien à "réparer" contrairement à ce que nous pensons. Seulement, aujourd'hui, notre manière de voir les choses peut nous limiter, nous faire douter, ou pire, nous bloquer.</p>
+                        <p>Depuis plus de 10 ans, j'accompagne les personnes à comprendre ce qui se joue en profondeur à travers 3 axes : les blessures et les manques qui influencent tes réactions, les valeurs qui guident tes décisions (souvent inconsciemment), et ta singularité (ce qui te rend unique et que tu n'oses pas toujours incarner).</p>
+                        <p>Tant que ces mécanismes restent inconscients, ils te dirigent. Quand tu les vois clairement, tu reprends pleinement ton pouvoir.</p>
+                    </div>
+                    <div class="intervenant__highlight">
+                        En 2024, une opération du cœur a marqué un tournant important dans ma vie. Elle m'a amené à accompagner avec encore plus de justesse, de présence et de profondeur.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Karima -->
+            <div class="intervenant intervenant--reverse">
+                <div>
+                    <h3 class="intervenant__name">Karima</h3>
+                    <div class="intervenant__role">Nâtha Yoga, Yoga du souffle</div>
+                    <div class="intervenant__text">
+                        <p>Enseignement de Christian Tikhomiroff, chaque posture se pratique avec conscience et exactitude, associée à une respiration attentive, pour relâcher les tensions, apaiser le mental et stimuler la circulation de l'énergie.</p>
+                        <p>La respiration devient un outil central : elle détend le corps, clarifie l'esprit et harmonise l'énergie vitale.</p>
+                        <p>Au-delà de l'enchaînement des postures, le stage offre un espace pour affiner vos sensations, développer la présence et retrouver un équilibre subtil entre corps, souffle et énergie.</p>
+                    </div>
+                    <div class="intervenant__highlight">
+                        Une pratique respectueuse du rythme de chacun, sans performance, pour revenir à soi avec clarté, justesse et profondeur.
+                    </div>
+                </div>
+                <img src="images/portrait-karima.png" alt="Karima — Nâtha Yoga" class="intervenant__photo">
+            </div>
+
+            <!-- Michel -->
+            <div class="intervenant">
+                <img src="images/portrait-michel.jpg" alt="Michel — Massages ancestraux et soins énergétiques" class="intervenant__photo">
+                <div>
+                    <h3 class="intervenant__name">Michel</h3>
+                    <div class="intervenant__role">Soins énergétiques & massages ancestraux</div>
+                    <div class="intervenant__text">
+                        <p>Formé à Katmandou auprès du guérisseur Rahul Barti, fondateur du Healing Hands Center, j'ai reçu des enseignements de traditions millénaires, transmises par des tribus et des guérisseurs du Sri Lanka, de Thaïlande et d'autres cultures du monde.</p>
+                        <p>Mes massages ancestraux visent à détendre profondément le corps, relancer la circulation énergétique et apaiser le mental. Les vibrations des bols chantants agissent en profondeur sur les cellules du corps, offrant un état de relaxation profonde propice à la régénération.</p>
+                    </div>
+                    <div class="intervenant__highlight">
+                        Mon approche est douce, respectueuse et intuitive, adaptée à chaque personne pour l'accompagner vers un mieux-être durable.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FORMAT -->
+    <section class="format reveal">
+        <div class="container">
+            <div class="section-label" style="color: var(--gold);">Le format</div>
+            <h2 class="section-title" style="color: var(--white);">3 jours en immersion</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">En petit groupe, dans un lieu calme et ressourçant.</p>
+
+            <div class="format__grid">
+                <div class="format__item">
+                    <h4 class="format__item-title">Exploration intérieure</h4>
+                    <p class="format__item-text">Des temps de coaching et de travail sur soi en profondeur</p>
+                </div>
+                <div class="format__item">
+                    <h4 class="format__item-title">Pratiques corporelles</h4>
+                    <p class="format__item-text">Yoga du souffle, massages et soins pour revenir dans le corps</p>
+                </div>
+                <div class="format__item">
+                    <h4 class="format__item-title">Intégration & repos</h4>
+                    <p class="format__item-text">Des moments pour assimiler, poser ce qui émerge et se régénérer</p>
+                </div>
+                <div class="format__item">
+                    <h4 class="format__item-title">Échanges en groupe</h4>
+                    <p class="format__item-text">Cercles de parole et espaces de partage authentique</p>
+                </div>
+                <div class="format__item">
+                    <h4 class="format__item-title">Cuisine bio & végétarienne</h4>
+                    <p class="format__item-text">Repas préparés par une naturopathe avec des produits locaux et de saison (tisanes, petits-déjeuners et dîners inclus).</p>
+                </div>
+                <div class="format__item">
+                    <h4 class="format__item-title">Pleine nature ardéchoise</h4>
+                    <p class="format__item-text">Randonnée, grand air et paysages de l'Ardèche méridionale pour intégrer et se ressourcer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEROULEMENT -->
+    <section class="deroulement reveal">
+        <div class="container">
+            <div class="section-label">Le programme</div>
+            <h2 class="section-title">Le déroulé du séjour</h2>
+            <p class="section-subtitle">Du samedi 23 au lundi 25 mai. 3 jours en immersion.</p>
+
+            <div class="deroulement__days">
+
+                <div class="deroulement__day">
+                    <div class="deroulement__day-meta">
+                        <span class="deroulement__day-number">01</span>
+                        <span class="deroulement__day-label">Jour 1</span>
+                    </div>
+                    <div>
+                        <h3 class="deroulement__day-title">Atterrissage</h3>
+                        <div class="deroulement__day-content">
+                            <p>Arrivée à partir de 16h dans le lieu. On prend le temps de se poser, de découvrir l'espace, de rencontrer le groupe.</p>
+                            <p>En fin de journée, une première pratique autour du souffle sera proposée pour commencer à ralentir et entrer pleinement dans le séjour. Puis, suivra un cercle de présentation pour déposer ce que chacun vient vivre ici.</p>
+                            <p>Soirée calme autour d'un repas végétarien et quelques surprises.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deroulement__day">
+                    <div class="deroulement__day-meta">
+                        <span class="deroulement__day-number">02</span>
+                        <span class="deroulement__day-label">Jour 2</span>
+                    </div>
+                    <div>
+                        <h3 class="deroulement__day-title">Reconnexion à soi</h3>
+                        <div class="deroulement__day-content">
+                            <p>La journée commence en douceur avec un réveil du corps (respiration, mouvements, présence).</p>
+                            <p>Puis un premier atelier de coaching pour venir explorer ce qui te bloque aujourd'hui : tes blessures, tes réactions, ce que tu rejettes ou juges… L'objectif est de réintégrer tout ça pour retrouver plus d'équilibre.</p>
+                            <p>L'après-midi laisse place aux massages individuels, au repos ou à une randonnée pour les plus motivés.</p>
+                            <p>En fin de journée, retour au corps avec une pratique douce (yoga, respiration, méditation).</p>
+                            <p>Le soir, un espace d'échange libre pour partager et expérimenter (massage en binôme, pratiques, discussions…).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deroulement__day">
+                    <div class="deroulement__day-meta">
+                        <span class="deroulement__day-number">03</span>
+                        <span class="deroulement__day-label">Jour 3</span>
+                    </div>
+                    <div>
+                        <h3 class="deroulement__day-title">Expansion</h3>
+                        <div class="deroulement__day-content">
+                            <p>On repart du corps pour s'ancrer, puis on entre dans un deuxième atelier de coaching.</p>
+                            <p>Cette fois, on travaille sur les valeurs (ce que tu admires, ce que tu projettes sur les autres) et comment ça influence ta perception de toi-même.</p>
+                            <p>L'après-midi permet une dernière intégration avec les massages, les temps libres et une balade avant le départ en fin de journée.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRATIQUES DETAIL -->
+    <section class="pratiques reveal">
+        <div class="container">
+            <div class="section-label">Les pratiques en détail</div>
+            <h2 class="section-title">Ce que tu vas expérimenter</h2>
+
+            <div class="pratiques__grid">
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Outils de coaching</h4>
+                    <p class="pratique-card__text">Des outils concrets pour décoder tes schémas émotionnels, comprendre tes réactions et repartir avec une grille de lecture utilisable au quotidien.</p>
+                </div>
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Yoga du souffle</h4>
+                    <p class="pratique-card__text">Une pratique ancestrale (Nâtha Yoga) qui allie postures, respiration et présence pour relâcher les tensions et reconnecter corps et esprit.</p>
+                </div>
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Massage ancestral</h4>
+                    <p class="pratique-card__text">Des soins profonds issus de traditions millénaires pour libérer les tensions physiques et émotionnelles accumulées.</p>
+                </div>
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Randonnée</h4>
+                    <p class="pratique-card__text">Un temps en pleine nature pour intégrer, respirer et laisser décanter ce qui émerge à travers le mouvement et le silence.</p>
+                </div>
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Atelier libre</h4>
+                    <p class="pratique-card__text">Un espace d'expression sans contrainte pour explorer ta créativité et laisser émerger ce qui a besoin de s'exprimer.</p>
+                </div>
+                <div class="pratique-card">
+                    <h4 class="pratique-card__title">Cercles de parole</h4>
+                    <p class="pratique-card__text">Des moments de partage authentique en groupe, dans un cadre bienveillant, pour poser des mots sur ton vécu et te sentir entendu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEU -->
+    <section class="lieu reveal">
+        <div class="container">
+            <div class="section-label">Le lieu</div>
+            <h2 class="section-title">La Bastide de Vallon</h2>
+            <p class="section-subtitle">Ardèche méridionale, Vallon-Pont-d'Arc. Un mas de charme au cœur de la nature, avec piscine et jardin privatif. Le lieu est tenu par Mireille, naturopathe certifiée FENA.</p>
+
+            <div class="lieu__gallery">
+                <img src="images/lieu-piscine.jpg" alt="La Bastide de Vallon — piscine et bâtiment" style="width:100%;height:100%;object-fit:cover;">
+                <img src="images/lieu-terrasse-couverte.jpg" alt="Terrasse couverte de la Bastide de Vallon" style="width:100%;height:280px;object-fit:cover;">
+                <img src="images/lieu-jardin-roses.jpg" alt="Les jardins de la Bastide de Vallon" style="width:100%;height:280px;object-fit:cover;">
+                <img src="images/lieu-portail.jpg" alt="Le portail de la Bastide de Vallon" style="width:100%;height:280px;object-fit:cover;">
+            </div>
+
+            <!-- Mireille — Hôte du lieu -->
+            <div class="lieu__hote">
+                <img src="images/portrait-mireille.jpeg" alt="Mireille — Hôte et naturopathe certifiée FENA" class="lieu__hote-photo">
+                <div>
+                    <div class="lieu__hote-tag">L'hôte du lieu</div>
+                    <h3 class="lieu__hote-name">Mireille</h3>
+                    <div class="lieu__hote-role">Naturopathe certifiée FENA</div>
+                    <div class="lieu__hote-text">
+                        <p>Mireille accueille les participants avec soin à La Bastide de Vallon, en Ardèche méridionale. Naturopathe certifiée FENA, elle a fait de ce lieu un espace pensé pour le bien-être et la régénération.</p>
+                        <p>Tout au long du séjour, elle prépare des repas végétariens avec des produits locaux et de saison. Petits-déjeuners, dîners, tisanes maison et petites surprises qui font la différence.</p>
+                        <p>Sa présence discrète et bienveillante contribue pleinement à l'atmosphère unique de cette retraite.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repas highlight -->
+            <div class="repas-highlight">
+                <div class="repas-highlight__icon">🌿</div>
+                <h4 class="repas-highlight__title">Cuisine bio, végétarienne & locale</h4>
+                <p class="repas-highlight__text">Tous les repas sont préparés avec amour par Mireille, naturopathe, à partir de produits locaux et de saison. Tisanes, petits-déjeuners gourmands et dîners végétariens. Manger fait aussi partie du soin.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EST-CE POUR TOI -->
+    <section class="pour-toi reveal">
+        <div class="container">
+            <div class="section-label">Est-ce que c'est fait pour toi ?</div>
+            <h2 class="section-title">Ce séjour est fait pour toi si...</h2>
+
+            <div class="pour-toi__grid">
+                <ul class="pour-toi__list">
+                    <li class="pour-toi__item">
+                        <div class="pour-toi__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span>Tu ressens le besoin de ralentir et prendre un temps de qualité pour toi</span>
+                    </li>
+                    <li class="pour-toi__item">
+                        <div class="pour-toi__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span>Tu es prêt à te regarder en face et aller travailler sur tes blessures pour faire briller ta singularité</span>
+                    </li>
+                    <li class="pour-toi__item">
+                        <div class="pour-toi__check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <span>Tu veux vivre une expérience profonde, pas juste un moment sympa de "bien-être", qui a été pensée pour te faire avancer durablement</span>
+                    </li>
+                </ul>
+
+                <div class="pour-toi__important">
+                    <h3 class="pour-toi__important-title">Important</h3>
+                    <p>L'expérience que l'on te propose n'est pas "une retraite de yoga" ou "un week-end détente classique".</p>
+                    <p>C'est une expérience qui peut te bousculer. Et c'est selon nous une bonne chose.</p>
+                    <p><strong style="color: var(--gold);">C'est souvent à partir de là que les vrais changements commencent.</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section class="tarifs reveal">
+        <div class="container">
+            <div class="section-label">Tarifs</div>
+            <h2 class="section-title">Investis en toi</h2>
+
+            <div class="tarifs__steps">
+
+                <!-- Étape 1 : Le séjour -->
+                <div class="tarif-step">
+                    <div class="tarif-step__number">1</div>
+                    <div>
+                        <h3 class="tarif-step__title">Le séjour</h3>
+                        <p class="tarif-step__desc">Coaching émotionnel, yoga du souffle, massages ancestraux et soins énergétiques. 3 jours d'accompagnement par les intervenants.</p>
+                        <div class="tarif-step__price-main">280&euro;</div>
+                        <p class="tarif-step__price-label">par personne</p>
+                    </div>
+                </div>
+
+                <!-- Étape 2 : L'hébergement -->
+                <div class="tarif-step">
+                    <div class="tarif-step__number">2</div>
+                    <div>
+                        <h3 class="tarif-step__title">L'hébergement & les repas</h3>
+                        <p class="tarif-step__desc">Pension complète. Repas bio et végétariens préparés par Mireille, naturopathe, avec des produits locaux (tisanes, petits-déjeuners et dîners inclus).<br><strong style="color: var(--dark);">À régler directement à l'hôte du lieu.</strong></p>
+
+                        <div class="tarifs__options">
+                            <div class="tarif-option">
+                                <div class="tarif-option__price">310&euro;</div>
+                                <div class="tarif-option__label">Chambre partagée<br>lit simple</div>
+                            </div>
+                            <div class="tarif-option">
+                                <div class="tarif-option__price">350&euro;</div>
+                                <div class="tarif-option__label">Chambre partagée<br>lit double (180cm)</div>
+                            </div>
+                            <div class="tarif-option">
+                                <div class="tarif-option__price">390&euro;</div>
+                                <div class="tarif-option__label">Chambre<br>individuelle</div>
+                            </div>
+                        </div>
+
+                        <div class="tarifs__note" style="padding-left:0;">
+                            <p>Les places en chambre individuelle sont limitées (premiers arrivés, premiers servis).</p>
+                            <p>Les frais de déplacement jusqu'au lieu restent à ta charge.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final reveal">
+        <div class="container">
+            <h2 class="cta-final__title">Prêt pour 3 jours<br>hors du temps ?</h2>
+            <p class="cta-final__text">Un cadre ressourçant, un petit groupe, 3 jours pour avancer durablement.</p>
+            <a href="#inscription" class="cta-final__btn">Je m'inscris</a>
+        </div>
+    </section>
+
+    <!-- INSCRIPTION -->
+    <section class="inscription reveal" id="inscription">
+        <div class="container">
+            <div class="section-label">Inscription</div>
+            <h2 class="section-title">Réserve ta place</h2>
+
+            <form class="inscription__form" id="form-inscription" action="https://formspree.io/f/jerguillaume@gmail.com" method="POST">
+
+                <!-- Champs cachés Formspree -->
+                <input type="hidden" name="_subject" value="Nouvelle inscription — Retraite Reconnexion">
+                <input type="hidden" name="_language" value="fr">
+
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required placeholder="Ton prénom">
+                </div>
+
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Ton nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="ton@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" required placeholder="06 XX XX XX XX">
+                </div>
+
+                <div class="form-group">
+                    <label for="hebergement">Formule d'hébergement</label>
+                    <select id="hebergement" name="hebergement" required>
+                        <option value="" disabled selected>Choisis ta formule</option>
+                        <option value="Chambre partagée, lit simple (310€)">Chambre partagée, lit simple (310€)</option>
+                        <option value="Chambre partagée, lit double 180cm (350€)">Chambre partagée, lit double 180cm (350€)</option>
+                        <option value="Chambre individuelle (390€)">Chambre individuelle (390€)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Un message ? (optionnel)</label>
+                    <textarea id="message" name="message" placeholder="Dis-nous ce qui t'amène, ou pose-nous tes questions..."></textarea>
+                </div>
+
+                <button type="submit" class="form__submit">Envoyer mon inscription</button>
+            </form>
+
+            <!-- Message de confirmation -->
+            <div id="form-merci" style="display:none; text-align:center; margin-top: 50px; padding: 50px 30px; background: var(--light);">
+                <p style="font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--dark); margin-bottom: 15px;">Merci !</p>
+                <p style="font-size: 17px; font-weight: 300; color: var(--text-light); max-width: 500px; margin: 0 auto;">Ton inscription a bien été reçue. On revient vers toi très vite pour confirmer ta place.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+        <div class="container">
+            <h3 class="contact__title">Des questions ?</h3>
+            <p class="contact__text">N'hésite pas à nous contacter directement.</p>
+            <div class="contact__links">
+                <a href="https://wa.me/" class="contact__link" target="_blank">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.613.613l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.317 0-4.457-.785-6.16-2.104l-.43-.344-3.14 1.052 1.052-3.14-.344-.43A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="tel:" class="contact__link">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    Téléphone
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jérémy Guillaume · Reconnexion. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- REVEAL ANIMATION + FORMSPREE -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Animation reveal au scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Gestion du formulaire Formspree
+            const form = document.getElementById('form-inscription');
+            const merci = document.getElementById('form-merci');
+
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const btn = form.querySelector('button[type="submit"]');
+                    btn.textContent = 'Envoi en cours…';
+                    btn.disabled = true;
+
+                    const data = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: data,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            form.style.display = 'none';
+                            merci.style.display = 'block';
+                        } else {
+                            btn.textContent = 'Une erreur est survenue. Réessaie.';
+                            btn.disabled = false;
+                        }
+                    } catch (err) {
+                        btn.textContent = 'Une erreur est survenue. Réessaie.';
+                        btn.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
