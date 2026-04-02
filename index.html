@@ -698,20 +698,49 @@
             margin-bottom: 28px;
         }
 
+        .tarif-step__price-block {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
         .tarif-step__price-main {
-            font-size: clamp(52px, 7vw, 72px);
+            font-size: clamp(38px, 5vw, 52px);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
             color: var(--dark);
             line-height: 1;
         }
 
+        .tarif-step__price-old {
+            font-size: clamp(24px, 3vw, 32px);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            color: var(--text-light);
+            text-decoration: line-through;
+            line-height: 1;
+        }
+
         .tarif-step__price-label {
             font-size: 14px;
             color: var(--text-light);
-            margin-top: 8px;
+            margin-top: 6px;
             font-weight: 300;
             font-style: italic;
+        }
+
+        .tarif-step__lancement {
+            display: inline-block;
+            margin-bottom: 18px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--dark);
+            background: var(--gold);
+            padding: 5px 14px;
+            font-weight: 600;
         }
 
         .tarif-step__badge {
@@ -961,6 +990,278 @@
             color: rgba(255,255,255,0.3);
             text-align: center;
             font-size: 13px;
+        }
+
+        /* =================== URGENCE HERO =================== */
+        .hero__urgence {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(247, 176, 66, 0.15);
+            border: 1px solid rgba(247, 176, 66, 0.4);
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero__urgence::before {
+            content: '';
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* =================== ENCART GROUPE =================== */
+        .groupe {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .groupe__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .groupe__photo {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .groupe__texte-label {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .groupe__texte-title {
+            font-size: clamp(28px, 4vw, 38px);
+            color: var(--dark);
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .groupe__texte-body {
+            font-size: 17px;
+            font-weight: 300;
+            color: var(--text);
+            line-height: 1.9;
+        }
+
+        .groupe__texte-body p {
+            margin-bottom: 16px;
+        }
+
+        .groupe__texte-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 980px) {
+            .groupe__inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .groupe__photo {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .groupe {
+                padding: 60px 0;
+            }
+        }
+
+        /* =================== TEMOIGNAGES =================== */
+        .temoignages {
+            padding: 120px 0;
+            background: var(--darker);
+            color: var(--white);
+        }
+
+        .temoignages__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 60px;
+            justify-items: center;
+        }
+
+        .temoignage {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 30px 25px;
+            width: 100%;
+        }
+
+        .temoignage__photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 980px) {
+            .temoignages__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .temoignages__grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .temoignage__text {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .temoignage__auteur {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* =================== FAQ =================== */
+        .faq {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .faq__list {
+            max-width: 780px;
+            margin: 60px auto 0;
+        }
+
+        .faq__item {
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .faq__item:first-child {
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .faq__question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 28px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .faq__question:hover {
+            color: var(--gold);
+        }
+
+        .faq__icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .faq__icon::before,
+        .faq__icon::after {
+            content: '';
+            position: absolute;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .faq__icon::before {
+            width: 14px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq__icon::after {
+            width: 2px;
+            height: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .faq__item.open .faq__icon::after {
+            transform: translate(-50%, -50%) rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq__item.open .faq__answer {
+            max-height: 500px;
+        }
+
+        .faq__answer-inner {
+            padding: 0 0 28px 0;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            .faq {
+                padding: 60px 0;
+            }
+            .faq__question {
+                font-size: 18px;
+                padding: 22px 0;
+            }
+            .temoignages {
+                padding: 60px 0;
+            }
         }
 
         /* =================== DEROULEMENT =================== */
@@ -1521,6 +1822,8 @@
             <h1 class="hero__title">Reconnexion</h1>
             <div class="hero__divider"></div>
             <p class="hero__subtitle">3 jours authentiques et immersifs pour sortir du mental, relâcher la pression du quotidien et te reconnecter à qui tu es vraiment.</p>
+            <div class="hero__urgence">Séjour limité à 12 participants</div>
+            <br>
             <a href="#inscription" class="hero__cta">Je réserve ma place</a>
         </div>
     </section>
@@ -1531,6 +1834,22 @@
             <p class="intro__text">
                 L'expérience Reconnexion est un moment qui a été imaginé pour que tu <em>reviennes à toi</em>, pour que tu te reconnectes à ce qui est le plus important dans ta vie et pour que tu retrouves <em>du sens et de la sérénité</em> dans ton quotidien.
             </p>
+        </div>
+    </section>
+
+    <!-- ENCART GROUPE -->
+    <section class="groupe reveal">
+        <div class="groupe__inner">
+            <img src="images/groupe-jeremy.jpg" alt="Le groupe Reconnexion" class="groupe__photo">
+            <div class="groupe__texte">
+                <div class="groupe__texte-label">L'expérience collective</div>
+                <h2 class="groupe__texte-title">Vivre ça en groupe, c'est puissant.</h2>
+                <div class="groupe__texte-body">
+                    <p>Il y a quelque chose d'unique qui se passe quand on traverse une expérience profonde entouré de personnes qui cherchent, elles aussi, à avancer.</p>
+                    <p>Le groupe crée des connexions authentiques et fortes. Et il agit aussi comme un miroir : ce que tu vois chez l'autre, ce que tu admires ou ce qui t'agace, en dit souvent beaucoup sur toi-même.</p>
+                    <p>C'est l'une des dimensions les plus transformatrices de ce séjour. Travailler sur soi, ensemble.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1690,6 +2009,10 @@
                     <div class="intervenant__highlight">
                         Mon approche est douce, respectueuse et intuitive, adaptée à chaque personne pour l'accompagner vers un mieux-être durable.
                     </div>
+                    <div style="margin-top:30px;display:grid;grid-template-columns:220px 1fr;gap:30px;align-items:center;background:var(--light);padding:25px;border-left:3px solid var(--gold);">
+                        <img src="images/massage-michel.jpeg" alt="Massage au sol habillé par Michel" style="width:100%;height:auto;display:block;">
+                        <p style="font-size:15px;color:var(--text);line-height:1.8;margin:0;">Le massage de Michel est un <strong>massage au sol, pratiqué entièrement habillé</strong>. Doux, profond et respectueux, il s'adapte à chaque personne pour libérer les tensions physiques et émotionnelles accumulées.</p>
+                    </div>
                 </div>
             </div>
 
@@ -1705,28 +2028,28 @@
 
             <div class="format__grid">
                 <div class="format__item">
-                    <h4 class="format__item-title">Exploration intérieure</h4>
-                    <p class="format__item-text">Des temps de coaching et de travail sur soi en profondeur</p>
+                    <h4 class="format__item-title">Coaching émotionnel</h4>
+                    <p class="format__item-text">Des outils concrets pour décoder tes schémas, comprendre tes réactions et repartir avec une grille de lecture utilisable au quotidien.</p>
                 </div>
                 <div class="format__item">
-                    <h4 class="format__item-title">Pratiques corporelles</h4>
-                    <p class="format__item-text">Yoga du souffle, massages et soins pour revenir dans le corps</p>
+                    <h4 class="format__item-title">Yoga du souffle</h4>
+                    <p class="format__item-text">Le Nâtha Yoga allie postures, respiration et présence pour relâcher les tensions et reconnecter corps et esprit. Accessible à tous les niveaux.</p>
                 </div>
                 <div class="format__item">
-                    <h4 class="format__item-title">Intégration & repos</h4>
-                    <p class="format__item-text">Des moments pour assimiler, poser ce qui émerge et se régénérer</p>
+                    <h4 class="format__item-title">Massage ancestral</h4>
+                    <p class="format__item-text">Un massage au sol, pratiqué habillé, issu de traditions millénaires. Profond et doux, il libère les tensions physiques et émotionnelles accumulées.</p>
                 </div>
                 <div class="format__item">
-                    <h4 class="format__item-title">Échanges en groupe</h4>
-                    <p class="format__item-text">Cercles de parole et espaces de partage authentique</p>
+                    <h4 class="format__item-title">Cercles de parole</h4>
+                    <p class="format__item-text">Des espaces de partage authentique en groupe, dans un cadre bienveillant, pour poser des mots sur ce qui émerge et se sentir entendu.</p>
                 </div>
                 <div class="format__item">
                     <h4 class="format__item-title">Cuisine bio & végétarienne</h4>
-                    <p class="format__item-text">Repas préparés par une naturopathe avec des produits locaux et de saison (tisanes, petits-déjeuners et dîners inclus).</p>
+                    <p class="format__item-text">Repas préparés par Mireille, naturopathe, avec des produits locaux et de saison (tisanes, petits-déjeuners et dîners inclus).</p>
                 </div>
                 <div class="format__item">
-                    <h4 class="format__item-title">Pleine nature ardéchoise</h4>
-                    <p class="format__item-text">Randonnée, grand air et paysages de l'Ardèche méridionale pour intégrer et se ressourcer</p>
+                    <h4 class="format__item-title">Nature & intégration</h4>
+                    <p class="format__item-text">Randonnée, temps libres et grand air en Ardèche méridionale pour décanter, respirer et ancrer ce qui a émergé.</p>
                 </div>
             </div>
         </div>
@@ -1792,40 +2115,6 @@
         </div>
     </section>
 
-    <!-- PRATIQUES DETAIL -->
-    <section class="pratiques reveal">
-        <div class="container">
-            <div class="section-label">Les pratiques en détail</div>
-            <h2 class="section-title">Ce que tu vas expérimenter</h2>
-
-            <div class="pratiques__grid">
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Outils de coaching</h4>
-                    <p class="pratique-card__text">Des outils concrets pour décoder tes schémas émotionnels, comprendre tes réactions et repartir avec une grille de lecture utilisable au quotidien.</p>
-                </div>
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Yoga du souffle</h4>
-                    <p class="pratique-card__text">Une pratique ancestrale (Nâtha Yoga) qui allie postures, respiration et présence pour relâcher les tensions et reconnecter corps et esprit.</p>
-                </div>
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Massage ancestral</h4>
-                    <p class="pratique-card__text">Des soins profonds issus de traditions millénaires pour libérer les tensions physiques et émotionnelles accumulées.</p>
-                </div>
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Randonnée</h4>
-                    <p class="pratique-card__text">Un temps en pleine nature pour intégrer, respirer et laisser décanter ce qui émerge à travers le mouvement et le silence.</p>
-                </div>
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Atelier libre</h4>
-                    <p class="pratique-card__text">Un espace d'expression sans contrainte pour explorer ta créativité et laisser émerger ce qui a besoin de s'exprimer.</p>
-                </div>
-                <div class="pratique-card">
-                    <h4 class="pratique-card__title">Cercles de parole</h4>
-                    <p class="pratique-card__text">Des moments de partage authentique en groupe, dans un cadre bienveillant, pour poser des mots sur ton vécu et te sentir entendu.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- LIEU -->
     <section class="lieu reveal">
@@ -1900,6 +2189,20 @@
         </div>
     </section>
 
+    <!-- TEMOIGNAGES -->
+    <section class="temoignages reveal">
+        <div class="container">
+            <div class="section-label" style="color: var(--gold);">Ils en parlent</div>
+            <h2 class="section-title" style="color: var(--white);">Ce qu'ils ont vécu</h2>
+
+            <div class="temoignages__grid" style="grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto;">
+                <div class="temoignage">
+                    <img src="images/temoignage-laura.png" alt="Témoignage de Laura" class="temoignage__photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- TARIFS -->
     <section class="tarifs reveal">
         <div class="container">
@@ -1914,7 +2217,11 @@
                     <div>
                         <h3 class="tarif-step__title">Le séjour</h3>
                         <p class="tarif-step__desc">Coaching émotionnel, yoga du souffle, massages ancestraux et soins énergétiques. 3 jours d'accompagnement par les intervenants.</p>
-                        <div class="tarif-step__price-main">280&euro;</div>
+                        <div class="tarif-step__lancement">Tarif de lancement</div>
+                        <div class="tarif-step__price-block">
+                            <div class="tarif-step__price-main">280&euro;</div>
+                            <div class="tarif-step__price-old">390&euro;</div>
+                        </div>
                         <p class="tarif-step__price-label">par personne</p>
                     </div>
                 </div>
@@ -1944,6 +2251,66 @@
                         <div class="tarifs__note" style="padding-left:0;">
                             <p>Les places en chambre individuelle sont limitées (premiers arrivés, premiers servis).</p>
                             <p>Les frais de déplacement jusqu'au lieu restent à ta charge.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq reveal">
+        <div class="container">
+            <div class="section-label">Questions fréquentes</div>
+            <h2 class="section-title">Tu te poses des questions ?</h2>
+
+            <div class="faq__list">
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        C'est fait pour quel profil de personne ?
+                        <span class="faq__icon"></span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Ce séjour est fait pour les personnes qui sentent le besoin de se reconnecter à elles-mêmes. Que tu traverses une période de doute, que tu cherches à te ressourcer, à t'ancrer, ou simplement à prendre un vrai temps pour toi, loin du quotidien et de l'agitation. L'envie de grandir dans un groupe bienveillant et de repartir avec plus de clarté sur qui tu es est le seul prérequis.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        Je n'ai jamais fait de yoga. Est-ce un problème ?
+                        <span class="faq__icon"></span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Pas du tout. Le Nâtha Yoga pratiqué avec Karima est un yoga doux, accessible à tous les niveaux (débutants comme pratiquants confirmés). Karima s'adapte à chaque participant, à son corps et à son rythme. L'objectif n'est pas la performance, c'est la présence.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        En quoi consiste le massage ? Dois-je me déshabiller ?
+                        <span class="faq__icon"></span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Le massage de Michel est un massage au sol, pratiqué entièrement habillé. Il est issu de traditions millénaires et vise à relâcher les tensions physiques et émotionnelles en profondeur. Pas besoin de se déshabiller, pas d'huile. Juste un moment de lâcher-prise complet, respectueux et adapté à chaque personne.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        Comment fonctionne le paiement ?
+                        <span class="faq__icon"></span>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            Après ton inscription, on prend contact avec toi pour un premier échange. On t'explique tout à ce moment-là. Un acompte est versé en amont pour confirmer ta place, puis le solde est réglé le jour J. L'hébergement et les repas sont réglés directement à l'hôte du lieu.
                         </div>
                     </div>
                 </div>
@@ -2062,6 +2429,16 @@
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // FAQ accordéon
+            document.querySelectorAll('.faq__question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.closest('.faq__item');
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq__item').forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
 
             // Gestion du formulaire Formspree
             const form = document.getElementById('form-inscription');
